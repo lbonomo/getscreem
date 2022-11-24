@@ -20,15 +20,17 @@ cargo build --target=x86_64-pc-windows-gnu --release
 
 Esta aparenta ser la mejor opsion, el binario es mucho más chico.
 
-```
+```bash
 rustup target add x86_64-pc-windows-msvc
 
 cargo install xwin
 sudo mkdir /opt/xwin
 sudo chown lbonomo:lbonomo /opt/xwin
 xwin --accept-license splat --output /opt/xwin
+```
 
-cat /home/lbonomo/.cargo/config.toml 
+Edit `~/.cargo/config.toml`
+```
 [target.x86_64-pc-windows-msvc]
 linker = "lld"
 rustflags = [
@@ -36,10 +38,11 @@ rustflags = [
   "-Lnative=/opt/xwin/sdk/lib/um/x86_64",
   "-Lnative=/opt/xwin/sdk/lib/ucrt/x86_64"
 ]
-
-sudo apt install lld
-
-cargo build --target=x86_64-pc-windows-msvc --release
 ```
+
+Install `sudo apt install lld`
+
+And build `cargo build --target=x86_64-pc-windows-msvc --release`
+
 
 ## Documentation
