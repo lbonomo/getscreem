@@ -8,5 +8,6 @@ edition = "2018"
 
 [dependencies]
 screenshots = "0.4.5"
+tray-item = "0.7.1"
 
 
