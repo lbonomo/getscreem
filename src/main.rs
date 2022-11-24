@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use screenshots::Screen;
 use std::{fs, time::Instant};
 
